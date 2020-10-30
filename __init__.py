@@ -20,8 +20,8 @@ client = Client("AC429a4c06f04eb36287f1c2a682c90a2a", "2d7e4dc79393ccbbd8d4827d0
 # change the "from_" number to your Twilio number and the "to" number
 # to the phone number you signed up for Twilio with, or upgrade your
 # account to send SMS to any phone number
-client.messages.create(to="+16267095806", 
-                       from_="+2012400693", 
+client.messages.create(to="+2012400693", 
+                       from_="+16267095806", 
                        body="Hello from Python!")
 
 def create_skill():
