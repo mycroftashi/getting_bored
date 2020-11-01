@@ -1,6 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler
 from twilio.rest import Client
-
+import RPi.GPIO as GPIO
+import time
 
 class RemindEvents(MycroftSkill):
     def __init__(self):
@@ -10,7 +11,7 @@ class RemindEvents(MycroftSkill):
     def handle_events_remind(self, message):
         self.speak_dialog('events.remind')
 
-
+#start - send sms
 # we import the Twilio client from the dependency we just installed
 
 
@@ -23,6 +24,28 @@ class RemindEvents(MycroftSkill):
 #client.messages.create(to="+12012400693", 
                        from_="+16267095806", 
                        body="Hello from Python!")
+#start - finish sms
+                       
+#start LED
+                       
+                       
+    
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(2, GPIO.OUT)
+
+state = True
+
+# endless loop, on/off for 1 second
+while True:
+ GPIO.output(2,True)
+ time.sleep(1)
+ GPIO.output(2,False)
+ time.sleep(1)
+                       
+# status = GPIO.get("GPIO1")
+ #       self.speak("Led is %s" % status)             
 
 def create_skill():
     return RemindEvents()
