@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
                        
-#start LED
+#start LED not
    
 
 GPIO.setwarnings(False)
