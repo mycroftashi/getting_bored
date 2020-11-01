@@ -43,6 +43,7 @@ while True:
  time.sleep(1)
  GPIO.output(2,False)
  time.sleep(1)
+self.speak("Led is working")  
                        
 # status = GPIO.get("GPIO1")
  #       self.speak("Led is %s" % status)             
